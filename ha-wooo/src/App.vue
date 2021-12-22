@@ -8,14 +8,18 @@
     <product-card />
     <product-card />
     <product-card />
-
     </div>
+    <div class="d-flex justify-content-center">
+      <Pagination/>
+    </div>
+    
   </div>
 </template>
 
 <script>
 import ProductCard from "./components/ProductCard.vue";
 import Sort from "./components/Sort.vue"
+import Pagination from "./components/Pagination.vue"
 // let products = [
 //   {
 //     name: "Pie Shell - 9",
@@ -146,7 +150,8 @@ export default {
   },
   components: {
     ProductCard,
-    Sort
+    Sort,
+    Pagination
   },
 };
 </script>
