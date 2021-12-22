@@ -1,7 +1,15 @@
 <template>
   <div class="container my-3">
     <Sort class="align-self-end"/>
+    <div class="d-flex flex-wrap justify-content-around">
     <product-card />
+    <product-card />
+    <product-card />
+    <product-card />
+    <product-card />
+    <product-card />
+
+    </div>
   </div>
 </template>
 
