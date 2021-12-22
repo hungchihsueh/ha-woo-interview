@@ -1,21 +1,25 @@
 <template>
-  <div class="product-card p-0 mx-5 mb-5 d-flex flex-column align-items-start">
-    <div class="product-card__badge badge p-2">New</div>
-    <img src="https://via.placeholder.com/300" alt="" class="w-100" />
+  <div
+    class="product-card p-0 mx-5 mb-5 d-flex flex-column jusitfy-content-between align-items-start"
+  >
+    <div>
+      <div class="product-card__badge badge p-2">New</div>
+      <img src="https://via.placeholder.com/300" alt="" class="w-100" />
+    </div>
+
     <div class="w-100 px-1">
       <p class="product-card__name mt-1 mb-0">{{ name }}</p>
-      <p class="product-card__shipment mt-0 mb-3">shipping method</p>
-      <p class="product-card__price my-0 d-flex align-items-center">
-        RM500<span class="ms-1">RM600</span>
+      <p class="product-card__shipment mt-0 mb-3">
+        shipping via {{ shipment }}
       </p>
-      <div class="w-100 d-flex justify-content-center">
-          <button
-        class="product-card__addCart btn m-2 align-self-center bg-primary text-white"
-      >
-        add to cart
-      </button>
+      <p class="product-card__price my-0 d-flex align-items-center">
+        RM{{ price }}<span class="ms-1">RM{{ preDiscount }}</span>
+      </p>
+      <div class="w-100 d-flex justify-content-center align-self-end">
+        <button class="product-card__addCart btn m-2 bg-primary text-white">
+          add to cart
+        </button>
       </div>
-      
     </div>
   </div>
 </template>
@@ -27,6 +31,15 @@ export default {
       type: String,
       default: "product name",
     },
+    price: {
+      type: String,
+    },
+    preDiscount: {
+      type: String,
+    },
+    shipment: {
+      type: String,
+    },
   },
 };
 </script>
@@ -34,6 +47,8 @@ export default {
 .product-card {
   position: relative;
   width: 18rem;
+  overflow: hidden;
+  white-space: nowrap;
   background: #eee;
   border: 1px solid transparent;
   transition: all 0.3s;
@@ -56,7 +71,9 @@ export default {
   object-fit: fill;
 }
 .product-card__name {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
   text-transform: capitalize;
 }
 .product-card__shipment {
@@ -74,7 +91,7 @@ export default {
   text-decoration: line-through;
 }
 button {
-    font-size: .8rem;
+  font-size: 0.8rem;
   width: 100%;
   border-radius: 5px;
   text-transform: uppercase;

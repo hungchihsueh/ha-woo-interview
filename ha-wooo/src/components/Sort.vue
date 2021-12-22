@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-3 d-flex align-items-center justify-content-end">
+  <div class="mb-5 d-flex align-items-center justify-content-end">
     <label for="sort-select" class="me-3">Sort by:</label>
     <select id="sort-select" class="form-select">
       <option value="1">Popular</option>
