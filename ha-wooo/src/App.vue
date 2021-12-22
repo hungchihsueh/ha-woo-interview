@@ -1,5 +1,5 @@
 <template>
-  <div class="container ">
+  <div class="container my-3">
     <Sort class="align-self-end"/>
     <product-card />
   </div>
