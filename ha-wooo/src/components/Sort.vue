@@ -1,7 +1,7 @@
 <template>
-  <div class="mb-5 d-flex align-items-center justify-content-end">
-    <label for="sort-select" class="me-3">Sort by:</label>
-    <select id="sort-select" class="form-select">
+  <div class=" d-flex align-items-center justify-content-end">
+    <label for="sort-select" class="me-3 text-nowrap">Sort by:</label>
+    <select @change="handleSort" id="sort-select" class="form-select">
       <option value="1">Popular</option>
       <option value="2">Newest</option>
       <option value="3">Price</option>
@@ -11,7 +11,15 @@
 <script>
 export default {
   name: "Sort",
-};
+  props:{
+   
+  },
+  methods: {
+    handleSort(e){
+      // console.log(e.target.value);
+      this.$emit('sorted',e.target.value);
+  },
+}}
 </script>
 <style scoped>
 #sort-select{
