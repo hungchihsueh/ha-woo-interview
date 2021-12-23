@@ -5,9 +5,19 @@
       <Sort @sorted="arrSort" />
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center">
-      <ProductCard
+    <div v-if="newProducts.length<1" class="d-flex flex-wrap justify-content-center">
+      <ProductCard 
         v-for="product in products"
+        :key="product.id"
+        :name="product.name"
+        :price="product.price"
+        :shipment="product.shipment"
+        :preDiscount="product.preDiscount"
+      />
+    </div>
+    <div v-else class="d-flex flex-wrap justify-content-center">
+      <ProductCard 
+        v-for="product in newProducts"
         :key="product.id"
         :name="product.name"
         :price="product.price"

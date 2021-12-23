@@ -1,5 +1,5 @@
 <template>
-        <P class="m-0">Showing 1-6 of 10  products </P>
+        <P class="m-0">Showing 1-10 of 10  products </P>
 </template>
 <script>
 export default {
